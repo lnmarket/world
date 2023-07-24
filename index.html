@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>LM - Lightning Market</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="shortcut icon" href="favicon.png">
+  </head>
+  <body>
+    <div class="main">
+      <div class="title-box">
+        <h1 class="title">
+          <span class="title-ln">Lightning</span><span class="title-market">Market</span>
+          <span class="title-desc">The Bitcoin Craigslist</span>
+        </h1>
+      </div>
+      <div class="info">
+        <div class="info-column">
+          <p class="info-heading">
+            Publish a listing
+          </p>
+          <p class="info-text">
+            you can advertise everything
+          </p></br>
+          <p class="info-text">
+		  how it works?<br/>
+		  1) create nostr > <a href="https://usenostr.org/" style">https://usenostr.org/</a><br/>
+		  2) use <a href="https://nostr.band/?q=%23lnads"><span class="mono">#lnads</span></a> hashtag in post<br/>
+		  3) choice category like buying "buying", "selling", "job", "service"<br/>
+		  4) add price like 150.000 sats<br/>
+          </p>
+        </div>
+        <div class="info-column">
+          <p class="info-heading">
+            Order a listing and example
+          </p>
+          <p class="info-text">
+		  post example:<br/><br/>
+		  #lnads<br/><br/>
+		  Im selling : my old wallet<br/>
+		  price is: 10.000 sats<br/><br/>
+		  [my_old_wallet_image.jpeg]<br/><br/>
+          </p>
+          <p class="info-text">
+            Lightning Market does not process payments. Contact the seller to pay them directly with Bitcoin.
+          </p>
+        </div>
+      </div>
+      <div id="listings_title">
+        <form id="search" method="post" action="#" onsubmit="filter_listings()">
+          <input id="search_term" type="text" name="search_term" placeholder="Search products...">
+          <select id="search_category">
+            <option value="all">All</option>
+            <option value="selling">Selling</option>
+            <option value="buying">Buying</option>
+            <option value="job">Job</option>
+            <option value="service">Service</option>
+          </select>
+          <button id="search_button" type="submit"><img src="search.png" alt="Search" id="search_icon"></button>
+        </form>
+        <h2 class="info-heading">
+          Browse listings
+        </h2>
+      </div>
+      <div id="listings_body">
+        <p class="loading">
+          <span class="loading-text">Loading...</span>
+        </p>
+      </div>
+      <div class="footer-bar">
+        Lightning Market is <a href="https://github.com/lnmarket/world" class="footer-link">open source</a>
+      </div>
+    </div>
+    <script src='jquery.min.js'></script>
+    <script src='feeds_api.js'></script>
+    <script src='xml2json.js'></script>
+    <script src='bech32-buffer.min.js'></script>
+  </body>
+</html>
